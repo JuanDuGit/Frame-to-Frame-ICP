@@ -23,18 +23,18 @@ include_directories(${CERES_INCLUDE_DIRS})
 
 # Set files to be compiled
 set(HEADER_FILES 
-    Eigen.h 
-    SimpleMesh.h 
-    PointCloud.h 
-    VirtualSensor.h 
-    NearestNeighbor.h 
-    ProcrustesAligner.h 
-    ICPOptimizer.h 
-    FreeImageHelper.h
+    src/Eigen.h 
+    src/SimpleMesh.h 
+    src/PointCloud.h 
+    src/VirtualSensor.h 
+    src/NearestNeighbor.h 
+    src/ProcrustesAligner.h 
+    src/ICPOptimizer.h 
+    src/FreeImageHelper.h
 )
 set(SOURCE_FILES 
-    FreeImageHelper.cpp
+    src/FreeImageHelper.cpp
 )
 
-add_executable(F2F_ICP main.cpp ${HEADER_FILES} ${SOURCE_FILES})
+add_executable(F2F_ICP src/main.cpp ${HEADER_FILES} ${SOURCE_FILES})
 target_link_libraries(F2F_ICP ${FREEIMAGE_LIBRARIES} ${FLANN_LIBRARIES} ${CERES_LIBRARIES})
